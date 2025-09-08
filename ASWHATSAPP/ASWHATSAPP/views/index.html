@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARY9N WhatsApp Multi-Bot</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login/Register View -->
+        <div id="auth-view" class="view">
+            <div class="auth-container">
+                <form id="login-form">
+                    <h2>Login</h2>
+                    <input type="text" id="login-username" placeholder="Username" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+                </form>
+                <form id="register-form" class="hidden">
+                    <h2>Register</h2>
+                    <input type="text" id="register-username" placeholder="Username" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                    <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Dashboard View -->
+        <div id="dashboard-view" class="view hidden">
+            <header>
+                <h1>WhatsApp Bot Dashboard</h1>
+                <button id="logout-btn">Logout</button>
+            </header>
+            <main class="dashboard-main">
+                <div class="column" id="sessions-column">
+                    <h2>My Sessions <button id="add-session-btn">+</button></h2>
+                    <div id="sessions-list"></div>
+                </div>
+                <div class="column" id="tasks-column">
+                    <h2>My Tasks <button id="add-task-btn">+</button></h2>
+                    <div id="tasks-list"></div>
+                </div>
+                 <div class="column" id="logs-column">
+                    <h2>Logs</h2>
+                    <div id="logs-content">Select a session or task to view logs.</div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="add-session-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Add New Session</h2>
+            <form id="add-session-form">
+                <input type="text" id="new-session-name" placeholder="Session Name (e.g., Work Phone)" required>
+                <label for="creds-file-input">Upload creds.json file:</label>
+                <input type="file" id="creds-file-input" accept=".json" required>
+                <button type="submit">Add Session</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="add-task-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Add New Task</h2>
+            <form id="add-task-form">
+                <input type="text" id="new-task-name" placeholder="Task Name (e.g., Marketing Campaign)" required>
+                <select id="task-session-select" required><option value="">-- Select a Session --</option></select>
+                <input type="text" id="task-target" placeholder="Target Number or Group ID" required>
+                <textarea id="task-messages" placeholder="Enter messages, one per line." required></textarea>
+                <input type="number" id="task-interval" placeholder="Delay in seconds" min="1" required>
+                <button type="submit">Create Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

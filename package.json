@@ -1,0 +1,22 @@
+{
+  "name": "whatsapp-multi-user-bot",
+  "version": "1.0.0",
+  "description": "A multi-user, multi-session WhatsApp bot with a database and web UI.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "setup-db": "node -e \"require('./database/database.js').initDb()\""
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.18",
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.5.2",
+    "express-session": "^1.18.1",
+    "pino": "^8.21.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "sweetalert2": "^11.22.2",
+    "ws": "^8.18.3"
+  }
+}
