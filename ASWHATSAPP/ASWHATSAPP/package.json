@@ -2,9 +2,9 @@
   "name": "whatsapp-multi-user-bot",
   "version": "1.0.0",
   "description": "A multi-user, multi-session WhatsApp bot with a database and web UI.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "setup-db": "node -e \"require('./database/database.js').initDb()\""
   },
   "dependencies": {
@@ -17,4 +17,3 @@
     "sqlite3": "^5.1.6",
     "ws": "^8.14.2"
   }
-}
